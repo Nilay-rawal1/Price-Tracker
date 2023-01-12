@@ -25,6 +25,9 @@ body {
     overflow-y:scroll;
 }
 
+a {
+    all: unset;
+}
 .float {
     position: absolute;
     border-radius: 10000px;

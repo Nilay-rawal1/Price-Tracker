@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %} 
+    <link rel = 'stylesheet' href = "{% static 'css/landing.css' %}">
+{% endblock head %}
+
+{% block title %} Barcost {% endblock title %}
+{% block body %}
+    {% include 'header.html' %}
+    <div class = 'hero1'>
+        <h1>
+            Bring the product link,
+            <br/>
+            We'll do the rest
+        </h1>
+        <br/>
+        <h2>
+            <br/>
+            With Barcost you can track the price journey of any product that you add. 
+        </h2>
+        <a href = ''>
+            <button class = 'btn'>GET STARTED</button>
+        </a>
+    </div>
+
+    <img src="{% static 'images/phone1.png' %}" class = 'phone p1'>
+    <img src="{% static 'images/phone2.png' %}" class = 'phone p2'>
+    
+    <div class = 'scroll-wheel'>
+        <div class = 'down-arrow'>
+            &#65088
+        </div>
+    </div>
+    <div class = 'hero2'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid delectus tempore voluptate aliquam tenetur ipsum sint quasi officia veniam reprehenderit, dolorem sapiente reiciendis explicabo quis similique, nulla ea blanditiis suscipit natus facilis aspernatur eveniet. Obcaecati error, excepturi ea architecto voluptatum, maiores repudiandae illum facilis voluptas dolores laudantium similique quasi, eligendi velit ratione dolorum consectetur omnis non quibusdam qui expedita quis molestias est! Numquam, eaque. Accusamus nam laborum, dolores minus sapiente et rerum asperiores. Asperiores laborum possimus distinctio, commodi corrupti enim quas maxime sapiente amet necessitatibus fugit suscipit omnis libero dicta voluptate ut nesciunt optio! Sunt facilis repellendus qui neque explicabo?
+    </div>
+
+{% endblock body %}

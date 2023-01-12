@@ -1,0 +1,86 @@
+.hero1 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 40%;
+    justify-content: center;
+    padding-left: 5%;
+    font-family: 'Clash Display';
+    word-spacing: 5px;
+}
+
+.hero1 h1 {
+    font-size: 4.5em;
+    color:  #ffffff;
+}
+
+.hero1 h2 {
+    font-size: 2.5em;
+    color: #c5c5c5;
+}
+
+.hero1 a {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.btn {
+    font-family: 'Clash Display';
+    font-size: 3vmin;
+    padding: 2% 5%; 
+    border-radius: 20px;
+    margin: auto;
+    background-color: #9f0cb7;
+    color: #ffffff;
+    word-spacing: 0.5em;
+}
+
+.phone {
+    position: absolute;
+}
+
+.p1 {
+    top: 30%;
+    right: 25%;
+}
+
+.p2 {
+    top: 15%;
+    right: 10%;
+}
+
+.scroll-wheel {
+    position: absolute;
+    height: 8vh;
+    width: 4vh;
+    background-color: transparent;
+    border: 3px solid white;
+    left: 50%;
+    bottom: 1%;
+    border-radius: 200px;
+}
+
+.scroll-wheel .down-arrow {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: x-large;
+    animation: down-arrow-anim 5s ease-in-out 10;
+}
+
+@keyframes down-arrow-anim {
+    0%{top: 30%;}
+    33%{top: 60%;}
+    66%{top: 50%;}
+    100%{top: 30%;}
+}
+
+.hero2 {
+    display: flex;
+    margin-top: 10%;
+    color: white;
+    font-size: 2.4vmin;
+    height: 100vh;
+    width: 100%;
+}

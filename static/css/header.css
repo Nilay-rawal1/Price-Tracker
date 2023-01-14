@@ -45,6 +45,7 @@
     margin-bottom: 1.5%; 
 }
 
+
 .main li:nth-child(1) {
     margin-left: 3%;
 }
@@ -67,4 +68,16 @@
     .main {
         display: none;
     }
+.status:hover{
+    cursor: pointer;
+    color: #976db0;
+    background-color: transparent;
+}
+.main li:hover{
+    cursor: pointer;
+    color: #976db0;
+    background-color: transparent;
+    
+    
+    position:sticky;
 }

@@ -1,0 +1,28 @@
+.heading{
+    color: antiquewhite;
+    font-size: 4vmin;
+    text-align: right;
+    cursor: pointer;
+    box-shadow: 10px 10px 44px 6px rgba(0,0,0,0.53);
+-webkit-box-shadow: 10px 10px 44px 6px rgba(0,0,0,0.53);
+-moz-box-shadow: 10px 10px 44px 6px rgba(0,0,0,0.53);
+    
+}
+.heading:hover{
+    color: blueviolet;
+    
+}
+.headdiv{
+    display: flex;
+    justify-content: end;
+    margin: 2vw 2vw;
+
+}
+.image{
+    display: flex;
+    justify-content: right;
+    padding: 0 20px;
+}
+.image img{
+    width: 50vmin;
+}

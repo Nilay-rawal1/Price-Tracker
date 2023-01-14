@@ -60,14 +60,6 @@
     padding-right: 1%;
 }
 
-@media screen and (max-width: 768px) {
-    .header {
-        height: 10vh;
-        font-size: 5vmin;
-    }
-    .main {
-        display: none;
-    }
 .status:hover{
     cursor: pointer;
     color: #976db0;
@@ -77,7 +69,15 @@
     cursor: pointer;
     color: #976db0;
     background-color: transparent;
-    
-    
     position:sticky;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: 10vh;
+        font-size: 5vmin;
+    }
+    .main {
+        display: none;
+    }
 }

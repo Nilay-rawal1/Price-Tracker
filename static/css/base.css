@@ -14,7 +14,6 @@
 }
 
 body {
-    min-width: -webkit-fill-available;
     min-height: 100vh;
     background-image: url('../images/circle.png'), url('../images/triangle.png'), linear-gradient(68.25deg, #17161A 0%, #220D2E 98.71%);
     background-repeat: no-repeat;

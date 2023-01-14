@@ -3,19 +3,24 @@
     align-items: center;
     justify-content: space-between;
     font-family: "Clash Display";
-    font-size: 1vw;
+    font-size: 1.5vw;
     color: white;
 }
 
 .header .title {
+    height: 100%;
     display: flex;
     align-items: center;
 
 }
 
 .header .title span {
-    font-size: 1vw;
+    font-size: inherit;
     margin-left: 5%;
+}
+
+.header .title img {
+    height: 80%;
 }
 
 .main {
@@ -29,7 +34,7 @@
     justify-content: center;
     align-items: flex-end;
     position: relative;
-    top: -2vh;
+    top: -2rem;
 }
 
 .main ul {
@@ -52,4 +57,14 @@
     display: flex;
     align-items: flex-start;
     padding-right: 1%;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: 10vh;
+        font-size: 5vmin;
+    }
+    .main {
+        display: none;
+    }
 }

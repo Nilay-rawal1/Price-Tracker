@@ -1,0 +1,46 @@
+{% load static %}
+{% block head %}
+    <link rel = 'stylesheet' href = "{%static 'css/feature_card.css' %}">
+{% endblock head %}
+
+
+<div class = 'cards'>
+    <div class = 'tools'>
+        <div class = 'circle'>
+            <div class = 'box red   '></div>
+        </div>
+        <div class = 'circle'>
+            <div class = 'box yellow'></div>
+        </div>
+        <div class = 'circle'>
+            <div class = 'box green'></div>
+        </div>
+    </div>
+
+    <div class="card_content">
+        <div class="card_title">
+            {{ title}}
+        </div>
+        <div class="card_desc">
+            {{ desc }}
+        </div>
+    </div>
+    <div class="card_image">
+        {% if image == 'clock' %}
+            <!-- <img src = "{% static 'images/clock.svg' %}"> -->
+            <svg width="50%" height="50%" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Clock">
+                    <g id="frame-group">
+                        <path id="frame" d="M124 63.5C124 96.3609 97.3609 123 64.5 123C31.6391 123 5 96.3609 5 63.5C5 30.6391 31.6391 4 64.5 4C97.3609 4 124 30.6391 124 63.5ZM11.1729 63.5C11.1729 92.9517 35.0483 116.827 64.5 116.827C93.9517 116.827 117.827 92.9517 117.827 63.5C117.827 34.0483 93.9517 10.1729 64.5 10.1729C35.0483 10.1729 11.1729 34.0483 11.1729 63.5Z" />
+                    </g>
+                    <g id="clock-tips-group">
+                        <rect id="tip1" x="61" y="19" width="6" height="45" rx="3"/>
+                        <path id="tip2" d="M62.7653 63.8641C61.295 62.8346 60.9376 60.8081 61.9672 59.3378V59.3378C62.9967 57.8674 65.0232 57.5101 66.4935 58.5396L87.9521 73.5651C89.4224 74.5946 89.7797 76.6211 88.7502 78.0914V78.0914C87.7207 79.5618 85.6941 79.9191 84.2238 78.8896L62.7653 63.8641Z"/>
+                    </g>
+                </g>
+            </svg>
+        {% elif imge == '' %}
+            <img src = "{% static 'images/__________.png' %}">
+        {% endif %}
+    </div>
+</div>

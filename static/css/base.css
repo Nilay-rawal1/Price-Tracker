@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -17,8 +18,8 @@ body {
     min-height: 100vh;
     background-image: url('../images/circle.png'), url('../images/triangle.png'), linear-gradient(68.25deg, #17161A 0%, #220D2E 98.71%);
     background-repeat: no-repeat;
-    background-size: 40%, 60%, 100%;
-    background-position: top left, 123.7% 20em, left;
+    background-size: 40%, 50%, 100%;
+    background-position: top left, 120% 20em, left;
     background-attachment: local;
     overflow-x: hidden;
     overflow-y:scroll;

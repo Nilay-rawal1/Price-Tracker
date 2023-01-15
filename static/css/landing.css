@@ -1,3 +1,4 @@
+
 .hero1 {
     display: flex;
     flex-direction: column;
@@ -80,13 +81,14 @@
 
 .hero2 {
     display: flex;
+    flex-direction: column;
     margin-top: 3%;
     color: white;
     font-size: 2.4vmin;
     height: 100vh;
     width: 100%;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .hero2_title {
@@ -99,13 +101,15 @@
     font-size: 5vmin;
     font-family: 'Author';
     word-spacing: 0.5vw;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
+    
 }
 
 .hero2_title span:nth-child(2) {
     width: 100%;
-    height: 1vh;
+    height: 0.3vh;
     background-color: white;
+    box-shadow: 0 0 60px 3px whitesmoke;
 }
 
 /* .hero2_title span::after {
@@ -121,9 +125,8 @@
 
 .hidden {
     position: relative;
-    height: 5vh;
     opacity: 0;
-    transition: all 2s;
+    transition: all 4s;
 }
 
 .hidden:nth-child(2) {
@@ -152,6 +155,35 @@
     opacity: 1;
 }
 
+.hero2_content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.hero2_content .center {
+    width: 2vw;
+    height: 80vh;
+    background: linear-gradient(180deg, transparent, rgba(108,1,115,1) 50%, transparent);
+}
+
+.left {
+    margin-right: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.right {
+    margin-left: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 @media screen and (max-width: 1600px) {
     .p1 {
         display: none;
@@ -165,7 +197,7 @@
 
     .hero1 {
         justify-content: flex-start;
-        width: 90%;
+        width: 100%;
         margin-top: 20%;
     }
 
@@ -174,6 +206,11 @@
     }
 
     .scroll-wheel {
-        left: 47%;
+        left: 50%;
+    }
+
+    .hero2 {
+        justify-content: flex-start;
+        margin-top: 0;
     }
 }  

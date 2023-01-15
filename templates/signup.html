@@ -3,18 +3,48 @@
 
 {% block head %} 
     <link rel = 'stylesheet' href = "{% static 'css/signup.css' %}">
+    <link rel = 'stylesheet' href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel = 'stylesheet' href = "{%static 'css/header.css' %}">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400&display=swap" rel="stylesheet">
+
 {% endblock head %}
 
 {% block title %} Barcost {% endblock title %}
 {% block body %}
-<div class="headdiv" >
-<h1 class="heading" >LOGIN/SIGNUP</h1>
+<div class = 'header'>
+    <div class = 'title'>
+        <img src = "{% static '/images/logo.png' %}">
+        <span>BARCOST</span>
+    </div>
+    <div class = 'main'>
+        <ul class="hovers">
+            <li> <a href="{% url 'landing' %}"><i class="fa-solid fa-house-chimney"></i> HOME </a> </li>
+        </ul>
+    </div>
+    <div class = 'status'>
+      <a  class="hovers"href="{% url 'login' %}">LOGIN/SIGNUP </a>  
+    </div>
 </div>
 <section>
-<div class="forms"></div>
+    
+<div class="forms">
+    
+    <form action="" class="form">
+        <p class="here">SIGNUP HERE   </p>
+        <input type="text" name="name" id="name" placeholder="enter your name"  required> <br>
+    <input type="email" name="email" id="email"  placeholder="enter your email id" required> <br>
+          <input type="password" name="password" id="password"  placeholder="enter your password" required><br>
+     <input type="password" name="cpassword" id="cpassword"  placeholder="confirm password" required><br>
+     <button>submit</button>
+      <p>Already have account?</p>
+      <a href="{% url 'login' %}"><p><span>Login</span></p> </a>
+    
+
+    </form>
+</div>
 <div class="image ">
     <img src="{% static 'images/signo 1.png' %}" alt="">
 </div>
 </section>
 
-{% endblock %}
+{% endblock body %}

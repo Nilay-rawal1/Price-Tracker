@@ -19,11 +19,13 @@
   display: flex;
   justify-content: right;
   padding: 0 20px;
+  position:sticky;
   margin-top: -55vh;
 }
 .image img {
-  width: 70vmin;
+  width: 70vh;
   right: 0;
+  
   padding-right: 8vw;
 }
 .forms {
@@ -125,5 +127,8 @@ z-index: 1;
 @media screen and (max-width: 800px){
     input{
         font: 5px;
+    }
+    .forms{
+      margin-left:auto;
     }
 }

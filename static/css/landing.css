@@ -179,6 +179,7 @@
 }
 
 .hero2_content {
+    position: relative;
     display: flex;
     justify-content: center;
     width: 90%;
@@ -197,12 +198,16 @@
 }
 
 .hero2_content .center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 2vw;
-    height: 95vh;
+    height: 100%;
     background: linear-gradient(180deg, transparent, rgba(108,1,115,1) 50%, transparent);
 }
 
 .left {
+    position: relative;
     margin-right: 5%;
     width: 40%;
     display: flex;

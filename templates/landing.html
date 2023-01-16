@@ -24,8 +24,8 @@
             <button class = 'btn'>GET STARTED</button>
         </a>
     </div>
-    <img src="{% static 'images/phone1.png' %}" class = 'phone p1'>
-    <img src="{% static 'images/phone2.png' %}" class = 'phone p2'>
+    <img src="{% static 'images/phone1.png' %}" class = 'phone p1' alt="image of a phone">
+    <img src="{% static 'images/phone2.png' %}" class = 'phone p2' alt="image of another phone">
     
     <a href = '#features'>
         <div class = 'scroll-wheel'>
@@ -45,7 +45,6 @@
 
                 {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='clock' only %}
 
-                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='clock' only %}
             </div>
             <div class = 'center hidden'>
                 
@@ -55,7 +54,6 @@
 
                 {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='none' only %}
                 
-                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='none' only %}
                 </div>
             </div>    
         </div>

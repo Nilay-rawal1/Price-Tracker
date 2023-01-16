@@ -8,7 +8,7 @@
 .left .show, .right .show {
     transform: translateY(0rem);
     opacity: 1;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 .cards {

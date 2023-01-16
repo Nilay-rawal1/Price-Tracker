@@ -27,24 +27,34 @@
     <img src="{% static 'images/phone1.png' %}" class = 'phone p1'>
     <img src="{% static 'images/phone2.png' %}" class = 'phone p2'>
     
-    <div class = 'scroll-wheel'>
-        <div class = 'down-arrow'>
-            &#65088
+    <a href = '#features'>
+        <div class = 'scroll-wheel'>
+            <div class = 'down-arrow'>
+                &#65088
+            </div>
         </div>
-    </div>
+    </a>
     <div class = 'hero2'>
-        <div class = 'hero2_title'>
+        <div class = 'hero2_title' id = 'features'>
             <span class = 'hidden'>WHY CHOOSE US</span>
             <span class = 'hidden'></span>
         </div>
-        <div class = 'hero2_content hidden'>
+        <div class = 'hero2_content'>
             <div class = 'left'>
                 {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='clock' only %}
+
+                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='clock' only %}
+
+                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='clock' only %}
             </div>
-            <div class = 'center'>
+            <div class = 'center hidden'>
                 
             </div>
             <div class = 'right'>
+                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='none' only %}
+
+                {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='none' only %}
+                
                 {% include 'feature_card.html' with title='Availability' desc='Our Servers run 24/7 to keep track of the product price.' image='none' only %}
                 </div>
             </div>    

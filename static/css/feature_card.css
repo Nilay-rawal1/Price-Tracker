@@ -78,6 +78,7 @@
     border: 1px solid #7b129e;
     bottom: -1rem;
     right: -1rem;
+    transition: all 2s;
 }
 
 .card_image img {
@@ -95,6 +96,11 @@
         width: 20rem;
         height: 17rem;
     }
+
+    .card_image {
+        width: 6rem;
+        height: 6rem;
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -106,7 +112,6 @@
     .hero2_content {
         flex-direction: column;
         align-items: center;
-        gap: 3rem;
     }
     
     .left, .right {
@@ -117,6 +122,7 @@
     .cards {
         width: 100%;
         height: 13rem;
+        gap: 3rem;
     }
     
     .card_title {
@@ -128,8 +134,8 @@
     }
     
     .card_image {
-        height: 6rem;
-        width: 6rem;;
+        height: 5rem;
+        width: 5rem;;
     }
 
 }

@@ -24,27 +24,42 @@
       <a  class="hovers"href="{% url 'signup' %}">LOGIN/SIGNUP </a>  
     </div>
 </div>
-    <section>
-        
-    <div class="forms">
-        
-        <form action="" class="form">
-            <p class="here">LOGIN HERE   </p>
-             <br>
-        <input type="email" name="email" id="email"  placeholder="enter your email id" required> <br>
-        <input type="password" name="password" id="password"  placeholder="enter your password" required><br>
-         <br>
-         <button>submit</button>
-          <p>Create New Account !</p>
-          <a href="{% url 'signup' %}"><p><span >Signup</span></p> </a>
-        
-    
+<section class='login-container-wrapper'>
+    <div class='login-container'>
+        <div class='login-image-container'>
+            <img src="{% static 'images/signo 1.png' %}" alt='login image'>
+        </div>
+
+        <form action="" method='post' class='login-form' required>
+            <h2>Login</h2>
+            <div class='input-fields'>
+                                <div class='input-field'>
+                    <input type='text' id='username ' name='username' required class='input-box'>
+                    <label for='username'>Username</label>
+                </div>
+                <div class='input-field'>
+                    <input type='password' id='password' name='password' required class='input-box'>
+                    <label for='password'>Password</label>
+                </div>
+            </div>
+            <div class='button-container'>
+                <button type='submit' class = 'form-btn'>
+                    Sign up
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+                <span>
+                    Already have an account ?
+                    <br>
+                    <a href="">Login</a>
+                </span>
+            </div>
         </form>
+
     </div>
-    <div class="image ">
-        <img src="{% static 'images/signo 1.png' %}" alt="">
-    </div>
-    </section>
+</section>
+
     
 
 {% endblock  %}

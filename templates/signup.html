@@ -13,7 +13,7 @@
 {% block body %}
 <div class = 'header'>
     <div class = 'title'>
-        <img src = "{% static '/images/logo.png' %}">
+        <img src = "{% static '/images/logo.png' %}" alt = 'stie logo'>
         <span>BARCOST</span>
     </div>
     <div class = 'main'>
@@ -25,26 +25,51 @@
       <a  class="hovers"href="{% url 'login' %}">LOGIN/SIGNUP </a>  
     </div>
 </div>
-<section>
-    
-<div class="forms">
-    
-    <form action="" class="form">
-        <p class="here">SIGNUP HERE   </p>
-        <input type="text" name="name" id="name" placeholder="enter your name"  required> <br>
-    <input type="email" name="email" id="email"  placeholder="enter your email id" required> <br>
-          <input type="password" name="password" id="password"  placeholder="enter your password" required><br>
-     <input type="password" name="cpassword" id="cpassword"  placeholder="confirm password" required><br>
-     <button>submit</button>
-      <p>Already have account?</p>
-      <a href="{% url 'login' %}"><p><span>Login</span></p> </a>
-    
+<section class='login-container-wrapper'>
+    <div class='login-container'>
+        <form action="" method='post' class='login-form' required>
+            <h2>Signup</h2>
+            <div class='input-fields'>
+                <div class='input-field'>
+                    <input type='text' id='name' name='name' required class='input-box'>
+                    <label for='name'>Name</label>
+                </div>
+                <div class='input-field'>
+                    <input type='text' id='username ' name='username' required class='input-box'>
+                    <label for='username'>Username</label>
+                </div>
+                <div class='input-field'>
+                    <input type='email' id='email' name='email' required class='input-box'>
+                    <label for='email'>Email</label>
+                </div>
+                <div class='input-field'>
+                    <input type='password' id='password' name='password' required class='input-box'>
+                    <label for='password'>Password</label>
+                </div>
+                <div class='input-field'>
+                    <input type='password' id='cpassword' name='c_password' required class='input-box'>
+                    <label for='c_password'>Re-enter password</label>
+                </div>
+            </div>
+            <div class='button-container'>
+                <button type='submit' class = 'form-btn'>
+                    Sign up
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+                <span>
+                    Already have an account ?
+                    <br>
+                    <a href="">Login</a>
+                </span>
+            </div>
+        </form>
 
-    </form>
-</div>
-<div class="image ">
-    <img src="{% static 'images/signo 1.png' %}" alt="">
-</div>
+        <div class='login-image-container'>
+            <img src="{% static 'images/signo 1.png' %}" alt='login image'>
+        </div>
+    </div>
 </section>
 
 {% endblock body %}

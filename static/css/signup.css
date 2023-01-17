@@ -10,125 +10,212 @@
 .heading:hover {
   color: blueviolet;
 }
-.headdiv {
-  display: flex;
-  justify-content: end;
-  margin: 2vw 2vw;
-}
-.image {
-  display: flex;
-  justify-content: right;
-  padding: 0 20px;
-  position:sticky;
-  margin-top: -55vh;
-}
-.image img {
-  width: 70vh;
-  right: 0;
-  
-  padding-right: 8vw;
-}
-.forms {
-  display: flex;
-  justify-content: left;
-  margin-top: 20vh;
-  margin-left: 10vw;
-  
-}
-.form span{
-   color: #2c073e;
-   background-color:rgba( 255, 255, 255, 0.08 );
-}
- .form span:hover{
-  cursor: pointer;
-  color: #aa00ff;
-}
-.form p {
-  
-  color:rgba( 255, 255, 255, 0.48 );
-  text-align: right;
-  margin: 10px 20px;
-  font-size: 4vh;
-  font-weight: 900;
-  background-color: transparent;
+
+body {
+  overflow: hidden;
 }
 
-input {
-  width: 62vmin;
-  color: #210d2c;
-  font-weight: bolder;
-  background-color: transparent;
-  padding: 10px;
-  border: 2px solid #2c073e;
-  border-radius: 15px;
-  margin: 2vmin 10px;
-  font-size: 2.5vmin;
-  box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-  -webkit-box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-  -moz-box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  z-index:-1 ;
+.login-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
-::placeholder{
-  color: rgb(222, 212, 212);
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 60%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  gap: 5%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* background: linear-gradient(200deg, rgb(255 255 255 / 26%) -1.54%, rgb(145 145 145 / 0%) 101.33%); */
+  border-radius: 5%;
+  padding: 3% 5%;
+}
+
+.login-form h2 {
+  color: #ffffff79;
+  font-family: 'Clash Display';
+}
+
+.login-form .input-fields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form label {
+  position: absolute;
+  font-family: system-ui;
+  font-size: 2vmin;
+  color: #c2c2c2;
+  letter-spacing: 1px;
+  pointer-events: none;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.input-field {
+  margin: 2.5% 0 2.5% 0%;
+  border-bottom: 1px solid #912bd4;
+  position: relative;
+}
+
+.input-box {
+  padding: 3%;
   background: transparent;
-  padding: 2px;
-
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 2vmin;
+  color: #ffffff;
 }
 
-button {
+.input-box:focus + label,
+.input-box:valid + label{
+  top: -10%;
+  font-size: 1.5vmin;
+  color: #ffffff;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.form-btn {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0.35rem;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
   font-weight: bold;
-  background-color: transparent;
-  padding: 10px;
-  border: 2px solid #2c073e;
-  border-radius: 10px;
-  margin: 7px 10px;
-  font-size: 2vh;
-  color: antiquewhite;
-    text-align: center;
-    box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-    -moz-box-shadow: 15px 15px 64px 10px rgba(0, 0, 0, 0.53);
-    font-family: Georgia, "Times New Roman", Times, serif;
-}
-button:hover{
-    cursor: pointer;
-    background-color: #210d2c;
-    color: #aa00ff;
-    font-size: 1.1vw;
-    font-weight: bolder;
 }
 
-form{
-background: rgba( 255, 255, 255, 0.3 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 5px );
--webkit-backdrop-filter: blur( 5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-z-index: 1;
+.form-btn .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 1200px) {
-    img {
-        display: none;
-    }
-    form{
-      align-items: center;
-        justify-content: center;
-        margin: auto;
-        padding: auto;
 
-    }
-    .forms{
-        align-items: center;
-        justify-content: center;
-    }
+.form-btn .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
 }
+
+.form-btn .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.form-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.form-btn:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.form-btn:hover .arrow:before {
+  right: 0;
+}
+
+.button-container span {
+  text-align: right;
+  font-size: 2vmin;
+  color: #ffffff;
+}
+.login-image-container {
+  height: 100%;
+  width: 50%;
+}
+
+.login-image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1000px) {
+  .login-container {
+    height: 50%;
+    width: 70%;
+    flex-direction: column-reverse;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 800px){
-    input{
-        font: 5px;
-    }
-    .forms{
-      margin-left:auto;
-    }
+  .login-image-container {
+    display: none;
+  }
+
+  .login-container {
+    width: 90%;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+
+  .input-field label {
+    font-size: 5vmin;
+    letter-spacing: 0;
+  }
+
+  .input-box:focus + label,
+  .input-box:valid + label{
+    font-size: 3vmin;
+  }
+
+  .button-container span {
+    font-size: 3vmin;
+  }
 }

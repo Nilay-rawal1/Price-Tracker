@@ -24,6 +24,7 @@
       <a  class="hovers"href="{% url 'signup' %}">LOGIN/SIGNUP </a>  
     </div>
 </div>
+
 <section class='login-container-wrapper'>
     <div class='login-container'>
         <div class='login-image-container'>
@@ -31,28 +32,32 @@
         </div>
 
         <form action="" method='post' class='login-form' required>
+            {% csrf_token %}
             <h2>Login</h2>
+            {% if message %}
+                {% include 'alert.html' %}
+            {% endif %}
             <div class='input-fields'>
-                                <div class='input-field'>
-                    <input type='text' id='username ' name='username' required class='input-box'>
+                <div class='input-field'>
+                    <input type='text' id='username' name='username' required class='input-box' autocomplete="off">
                     <label for='username'>Username</label>
                 </div>
                 <div class='input-field'>
-                    <input type='password' id='password' name='password' required class='input-box'>
+                    <input type='password' id='password' name='password' required class='input-box' autocomplete="off">
                     <label for='password'>Password</label>
                 </div>
             </div>
             <div class='button-container'>
-                <button type='submit' class = 'form-btn'>
+                <button type='submit' class='form-btn'>
                     Sign up
                     <div class="arrow-wrapper">
                         <div class="arrow"></div>
                     </div>
                 </button>
                 <span>
-                    Already have an account ?
+                    New Member ? Create an account
                     <br>
-                    <a href="">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
                 </span>
             </div>
         </form>

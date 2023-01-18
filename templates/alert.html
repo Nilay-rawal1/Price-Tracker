@@ -1,0 +1,11 @@
+{% load static %}
+
+{% block head %}
+    <link rel = 'stylesheet' href = "{% static 'css/alert_card.css' %}">
+{% endblock head %}
+
+{% block body %}
+    <div class = 'alert_container'>
+        <span>{{ message }}</span>
+    </div>
+{% endblock body %}

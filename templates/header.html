@@ -1,9 +1,11 @@
 {% load static %}
+
 {% block head %} 
     <link rel = 'stylesheet' href = "{%static 'css/header.css' %}">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400&display=swap" rel="stylesheet">
 {% endblock head %}
 
+{% block body %}
 <div class = 'header'>
     <div class = 'title'>
         <img src = "{% static '/images/logo.png' %}">
@@ -17,6 +19,11 @@
         </ul>
     </div>
     <div class = 'status'>
-      <a  class="hovers"href="{% url 'signup' %}">LOGIN/SIGNUP </a>  
+        {% if user.is_authenticated %}
+            <a class="hovers" href="{% url 'logout' %}"> {{ user.username }} </a> 
+        {% else %} 
+            <a class="hovers" href="{% url 'login' %}">LOGIN/SIGNUP </a>  
+        {% endif %}
     </div>
 </div>
+{% endblock body %}

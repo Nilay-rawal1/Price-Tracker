@@ -28,7 +28,13 @@
 <section class='login-container-wrapper'>
     <div class='login-container'>
         <form action="" method='post' class='login-form' required>
+            {% csrf_token %}
             <h2>Signup</h2>
+
+            {% if message %}
+                {% include 'alert.html' %}
+            {% endif %}
+
             <div class='input-fields'>
                 <div class='input-field'>
                     <input type='text' id='name' name='name' required class='input-box'>
@@ -61,7 +67,7 @@
                 <span>
                     Already have an account ?
                     <br>
-                    <a href="">Login</a>
+                    <a href="{% url 'login' %}">Login</a>
                 </span>
             </div>
         </form>

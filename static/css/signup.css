@@ -28,7 +28,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 70%;
-  height: 60%;
   margin: auto;
   position: absolute;
   top: 50%;
@@ -42,18 +41,20 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-  height: 100%;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
   /* background: linear-gradient(200deg, rgb(255 255 255 / 26%) -1.54%, rgb(145 145 145 / 0%) 101.33%); */
-  border-radius: 5%;
+  border-radius: 0.5rem;
   padding: 3% 5%;
+  gap: 2rem;
 }
 
 .login-form h2 {
   color: #ffffff79;
   font-family: 'Clash Display';
+  font-size: 4vmin;
+  letter-spacing: 0.25rem;
 }
 
 .login-form .input-fields {
@@ -65,7 +66,7 @@ body {
 .login-form label {
   position: absolute;
   font-family: system-ui;
-  font-size: 2vmin;
+  font-size: 2.4vmin;
   color: #c2c2c2;
   letter-spacing: 1px;
   pointer-events: none;
@@ -87,14 +88,14 @@ body {
   border: none;
   outline: none;
   width: 100%;
-  font-size: 2vmin;
+  font-size: 2.4vmin;
   color: #ffffff;
 }
 
 .input-box:focus + label,
 .input-box:valid + label{
   top: -10%;
-  font-size: 1.5vmin;
+  font-size: 1.8vmin;
   color: #ffffff;
 }
 

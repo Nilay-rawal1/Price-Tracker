@@ -193,6 +193,10 @@ body {
   }
 }
 
+.hoversign:hover{
+  cursor: pointer;
+  color: black;
+}
 @media screen and (max-width: 800px){
   .login-image-container {
     display: none;

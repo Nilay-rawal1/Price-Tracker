@@ -58,7 +58,7 @@ def signup(request):
             return render(request, 'signup.html', {'message' : 'Username is already taken.'})
 
     else:
-        return render(request, 'signup.html')
+        return render(request, 'signup.html', {'message': ''})
 
 def login_user(request):
     if request.method == 'POST':
@@ -73,7 +73,7 @@ def login_user(request):
         else:
             return render(request, 'login.html', {'message': 'Please check the login credentials again.'})
     else:
-        return render(request, 'login.html')
+        return render(request, 'login.html', {'message': ''})
 
 def logout_user(request):
     logout(request)

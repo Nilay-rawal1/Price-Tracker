@@ -1,1 +1,1 @@
-web: python manage.py migrate && guicorn PriceTracker.wsgi
+web: python manage.py makemigration && python manage.py migrate && gunicorn PriceTracker.wsgi

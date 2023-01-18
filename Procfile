@@ -1,1 +1,1 @@
-web: guicorn PriceTracker.wsgi --log-file -
+web: python manage.py migrate && guicorn PriceTracker.wsgi

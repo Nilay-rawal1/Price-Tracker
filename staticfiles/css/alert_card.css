@@ -1,0 +1,15 @@
+.alert_container {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #ffffff5e;
+    color: white;
+    font-size: 2.4vmin;
+    text-align: center;
+    margin: 2%; 
+}
+
+@media screen and (max-width: 800px) {
+    .alert_container{
+        font-size: 5vmin;
+    }
+}

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+.left .hidden, .right .hidden { 
+    opacity: 0;
+    transform: translateY(5rem);
+}
+
+.left .show, .right .show {
+    transform: translateY(0rem);
+    opacity: 1;
+    transition: all 1s;
+}
+
+.cards {
+    width: 30rem;
+    height: 17rem;
+    margin: 3% 0px;
+    background-color: transparent;
+    border: 1px solid #7b129e;
+    border-radius: 3%;
+    box-shadow: 0px 0px 10pt 0pt #7b129e;
+    position: relative;
+    overflow: hidden;
+}
+
+.tools {
+    width: 100%;
+    height: 1.5rem;
+    display: block;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.circle {
+    display: inline-block;
+    width: 0.9rem;
+    height: 1rem;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.card_content {
+    font-family: 'Noto Sans';
+    margin: 2rem;
+}
+
+.card_title {
+    font-size: 3vmin;
+}
+
+.card_desc {
+    font-size: 2vmin;
+}
+
+.card_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    position: absolute;
+    border: 1px solid #7b129e;
+    bottom: -1rem;
+    right: -1rem;
+    transition: all 2s;
+}
+
+.card_image img {
+    height: 50%;
+    width: 50%;
+}
+
+#tip1, #tip2, #frame{
+    fill: #7b129e;
+    stroke: #7b129e;
+}
+
+@media screen and (max-width: 1260px) {
+    .cards {
+        width: 20rem;
+        height: 17rem;
+    }
+
+    .card_image {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    
+    .center {
+        display: none;
+    }
+    
+    .hero2_content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left, .right {
+        width: 80%;
+        margin: 0;
+    }
+    
+    .cards {
+        width: 100%;
+        height: 13rem;
+        gap: 3rem;
+    }
+    
+    .card_title {
+        font-size: 4vmin;
+    }
+    
+    .card_desc {
+        font-size: 3vmin;
+    }
+    
+    .card_image {
+        height: 5rem;
+        width: 5rem;;
+    }
+
+}

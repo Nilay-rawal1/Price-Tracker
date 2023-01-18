@@ -1,0 +1,255 @@
+
+.hero1 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 40%;
+    justify-content: center;
+    padding-left: 5%;
+    font-family: 'Clash Display';
+    word-spacing: 5px;
+}
+
+.hero1 h1 {
+    font-size: 7vmin;
+    color:  #ffffff;
+}
+
+.hero1 h2 {
+    font-size: 3vmin;
+    color: #c5c5c5;
+}
+
+.hero1 a {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.btn {
+    font-family: 'Clash Display';
+    font-size: 3vmin;
+    padding: 2% 5%; 
+    border-radius: 20px;
+    margin: auto;
+    background-color: #9f0cb7;
+    color: #ffffff;
+    word-spacing: 0.5em;
+}
+
+.phone {
+    position: absolute;
+    height: 70vmin;
+}
+
+.p1 {
+    top: 30%;
+    right: 25%;
+}
+
+.p2 {
+    top: 15%;
+    right: 10%;
+}
+
+.scroll-wheel {
+    position: absolute;
+    height: 8vh;
+    width: 4vh;
+    background-color: transparent;
+    border: 3px solid white;
+    left: 50%;
+    bottom: 1%;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
+.scroll-wheel .down-arrow {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: x-large;
+    animation: down-arrow-anim 5s ease-in-out 10;
+}
+
+@keyframes down-arrow-anim {
+    0%{top: 30%;}
+    33%{top: 60%;}
+    66%{top: 50%;}
+    100%{top: 30%;}
+}
+
+.hero2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    color: white;
+    font-size: 2.4vmin;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero2_title {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero2_title span:nth-child(1){
+    text-align: center;
+    font-size: 5vmin;
+    font-family: 'Author';
+    word-spacing: 0.5vw;
+    margin-bottom: 4%;
+    
+}
+
+.hero2_title span:nth-child(2) {
+    width: 100%;
+    height: 0.3vh;
+    background-color: white;
+    box-shadow: 0 0 60px 3px whitesmoke;
+}
+
+/* .hero2_title span::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.175rem;
+    background: rgb(255, 255, 255);
+    left: 0;
+    bottom: -1rem;
+    transform: scale(0, 1);
+} */
+
+/* .hidden {
+    position: relative;
+    opacity: 0;
+    transition: all 4s;
+}
+
+.hidden:nth-child(2) {
+    transform: scale(0, 1);
+    transition: all 3s;
+    transition-delay: 100msx;
+} */
+
+/* .hidden::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    background: rgb(255, 255, 255);
+    left: 0;
+    bottom: -1rem;
+    transform: scale(0, 1);
+} */
+
+/* .show {
+    opacity: 1;
+}
+
+.hero2_title .show {
+    transform: scale(1.1, 1);
+    opacity: 1;
+} */
+
+.hero2_title .hidden {
+    opacity: 0;
+    transform: scale(0.25, 0.5);
+}
+
+.hero2_title .hidden:nth-child(2) {
+    opacity: 0;
+    transform: scale(0, 1);
+}
+
+.hero2_title .show:nth-child(1) {
+    position: relative;
+    opacity: 1;
+    transition: all 2s;
+    transform: scale(1, 1);
+}
+
+.hero2_title .show:nth-child(2) {
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: all 2s;
+}
+
+.hero2_content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-top: 5%;
+}
+
+.hero2_content .hidden {
+    opacity: 0;
+    transform: scale(0, 1);
+}
+
+.hero2_content .show {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+.hero2_content .center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2vw;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(108,1,115,1) 50%, transparent);
+}
+
+.left {
+    position: relative;
+    margin-right: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.right {
+    margin-left: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 1600px) {
+    .p1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .phone {
+        display: none;
+    }
+
+    .hero1 {
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 20%;
+    }
+
+    .hero1 a {
+        margin-top: 50%;
+    }
+
+    .scroll-wheel {
+        left: 47%;
+    }
+
+    .hero2 {
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+}  

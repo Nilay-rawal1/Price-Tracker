@@ -50,7 +50,7 @@ def signup(request):
         
         #trying to save data
         try:
-            user = User.objects.create_user(username = username, name = name, email = email, password = password)
+            user = User.objects.create_user(username = username, email = email, password = password)
             user.save()
             login(request, user)
             return redirect('landing')

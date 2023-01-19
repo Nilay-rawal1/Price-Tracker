@@ -167,9 +167,10 @@ body {
 
 .button-container span {
   text-align: right;
-  font-size: 2vmin;
+  font-size: 2.3vmin;
   color: #ffffff;
 }
+
 .login-image-container {
   height: 100%;
   width: 50%;
@@ -193,6 +194,10 @@ body {
   }
 }
 
+.hoversign:hover{
+  cursor: pointer;
+  color: black;
+}
 @media screen and (max-width: 800px){
   .login-image-container {
     display: none;

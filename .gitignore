@@ -1,3 +1,4 @@
 .env
 .venv
 price
+__pycache__

@@ -32,6 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['barcost.up.railway.app', 'localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['barcost.up.railway.app']
 # Application definition
 
 INSTALLED_APPS = [

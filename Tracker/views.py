@@ -45,17 +45,34 @@ def signup(request):
             return render(request, 'signup.html', {'message': 'Password must contain atleast 1 UPPERCASE alphabet'})
 
         #check if passowd and confirm password are same
-        if password != c_password:
+        elif password != c_password:
             return render(request, 'signup.html', {'message': 'Password must match.'})
         
+        else:
+            try:
+                User.objects.get(username = username)
+                return render(request, 'signup.html', {'message': 'Username already in use'})
+            
+            except User.DoesNotExist:
+
+                try:
+                    User.objects.get(email = email)
+                    return render(request, 'signup.html', {'message': 'Email already in use.'})
+
+                except User.DoesNotExist:
+                    user = User.objects.create_user(username = username, firstname = name, email = email, password = password)
+                    user.save()
+                    login(request, user)
+                    return redirect('landing')
+
         #trying to save data
-        try:
-            user = User.objects.create_user(username = username, email = email, password = password)
-            user.save()
-            login(request, user)
-            return redirect('landing')
-        except IntegrityError:
-            return render(request, 'signup.html', {'message' : 'Username is already taken.'})
+        # try:
+        #     user = User.objects.create_user(username = username, email = email, password = password)
+        #     user.save()
+        #     login(request, user)
+        #     return redirect('landing')
+        # except IntegrityError:
+        #     return render(request, 'signup.html', {'message' : 'Username is already taken.'})
 
     else:
         return render(request, 'signup.html', {'message': ''})

@@ -20,7 +20,7 @@
     </div>
     <div class = 'status'>
         {% if user.is_authenticated %}
-            <a class="hovers" href="{% url 'logout' %}"> {{ user.username }} </a> 
+            <a class="hovers" href="{% url 'logout' %}"> {{ user.first_name }} </a> 
         {% else %} 
             <a class="hovers" href="{% url 'login' %}">LOGIN/SIGNUP </a>  
         {% endif %}

@@ -31,12 +31,14 @@
             <img src="{% static 'images/signo 1.png' %}" alt='login image'>
         </div>
 
-        <form action="" method='post' class='login-form' required>
-            {% csrf_token %}
+        <form action="{% url 'login' %}" method="POST" class='login-form' required>
             <h2>Login</h2>
+
             {% if message %}
                 {% include 'alert.html' %}
             {% endif %}
+
+            {% csrf_token %}
             <div class='input-fields'>
                 <div class='input-field'>
                     <input type='text' id='username' name='username' required class='input-box' autocomplete="off">

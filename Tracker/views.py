@@ -9,12 +9,12 @@ def landing(request):
     return render(request, 'landing.html')
 
 def signup(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        name = request.POST['name']
-        email = request.POST['email']
-        password = request.POST['password']
-        c_password = request.POST['c_password']
+    if request.method == "POST":
+        username = request.POST["username"]
+        name = request.POST["name"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        c_password = request.POST["c_password"]
 
         #check for password strenght
         alphabets, nums, lower_case, upper_case = 0, 0, 0, 0
@@ -61,12 +61,13 @@ def signup(request):
         return render(request, 'signup.html', {'message': ''})
 
 def login_user(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+    print('This is a test to check if the function is being called or not.')
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
 
         print('bhai data aa gya')
-        user = authenticate(username = username, password = password)
+        user = authenticate(request, username = username, password = password)
         if user is not None:
             login(request, user)
             return redirect('landing')

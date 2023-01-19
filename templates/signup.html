@@ -27,14 +27,14 @@
 </div>
 <section class='login-container-wrapper'>
     <div class='login-container'>
-        <form action="" method='post' class='login-form' required>
-            {% csrf_token %}
+        <form action="{% url 'signup' %}" method="POST" class='login-form' required>
             <h2>Signup</h2>
 
             {% if message %}
-                {% include 'alert.html' %}
+            {% include 'alert.html' %}
             {% endif %}
-
+            
+            {% csrf_token %}
             <div class='input-fields'>
                 <div class='input-field'>
                     <input type='text' id='name' name='name' required class='input-box'>

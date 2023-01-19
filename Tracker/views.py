@@ -60,7 +60,7 @@ def signup(request):
                     return render(request, 'signup.html', {'message': 'Email already in use.'})
 
                 except User.DoesNotExist:
-                    user = User.objects.create_user(username = username, firstname = name, email = email, password = password)
+                    user = User.objects.create_user(username = username, first_name = name, email = email, password = password)
                     user.save()
                     login(request, user)
                     return redirect('landing')

@@ -10,13 +10,19 @@
 .header .title {
     height: 100%;
     display: flex;
+    flex: 1;
     align-items: center;
+    gap: 0.5rem;
 
+}
+
+.title a {
+    display: flex;
+    align-items: center;
 }
 
 .header .title span {
     font-size: inherit;
-    margin-left: 5%;
 }
 
 .header .title img {
@@ -31,6 +37,7 @@
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
+    flex: 3;
     justify-content: center;
     align-items: flex-end;
     position: relative;
@@ -56,6 +63,7 @@
 
 .status {
     display: flex;
+    flex: 1;
     align-items: flex-start;
     padding-right: 1%;
 }

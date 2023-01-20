@@ -7,9 +7,11 @@
 
 {% block body %}
 <div class = 'header'>
-    <div class = 'title'>
-        <img src = "{% static 'images/logo.png' %}">
-        <span>BARCOST</span>
+    <div class='title'>
+        <a href="{% url 'landing' %}">
+            <img src="{% static 'images/logo.png' %}">
+            <span>BARCOST</span>
+        </a>
     </div>
     <div class = 'main'>
         <ul class="hovers">

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel = 'stylesheet' href = "{% static 'css/dashboard.css' %}">
+{% endblock head %}
+
+{% block title %} Dashboard {% endblock title %}
+{% block body %}
+    {% include 'header.html' %}
+    <div class = 'dashboard-container'>
+        <div class = 'empty-dashborad'>
+            There is nothing to track...
+            Add product link to start tracking 
+            <br/>
+            <br/>
+            <img src = "{% static 'images/add_icon.png' %}">
+        </div>
+    </div>
+{% endblock body%}

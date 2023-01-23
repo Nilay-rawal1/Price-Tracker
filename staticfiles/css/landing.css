@@ -1,3 +1,6 @@
+body {
+    overflow-y: scroll;
+}
 
 .hero1 {
     display: flex;
@@ -89,6 +92,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero2_title {

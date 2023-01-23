@@ -1,6 +1,7 @@
 .header {
+    height: 4rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     font-family: "Clash Display";
     font-size: 1.5vw;
@@ -12,12 +13,12 @@
     display: flex;
     flex: 1;
     align-items: center;
-    gap: 0.5rem;
-
 }
 
 .title a {
+    height: inherit;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -26,22 +27,21 @@
 }
 
 .header .title img {
-    height: 80%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .main {
-    height: 3em;
-    width: 50%;
+    height: 100%;
     background-image: url('../images/header.png');
-    background-size: 100% 3em; 
+    background-size: 100% 100%; 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     display: flex;
     flex: 3;
     justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    top: -2rem;
+    align-items: center;
 }
 
 .main ul {
@@ -49,23 +49,21 @@
     justify-content: space-around;
     width: 80%;
     list-style-type: none;
-    margin-bottom: 1.5%; 
-}
+}   
 
-
-.main li:nth-child(1) {
-    margin-left: 3%;
-}
-
-.main li:nth-child(2){
-    margin: 0px 10%;
+.main li:hover{
+    cursor: pointer;
+    color: #976db0;
+    background-color: transparent;
+    position:sticky;
 }
 
 .status {
+    height: 100%;
     display: flex;
     flex: 1;
-    align-items: flex-start;
-    padding-right: 1%;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .status:hover{
@@ -73,11 +71,41 @@
     color: #976db0;
     background-color: transparent;
 }
-.main li:hover{
-    cursor: pointer;
-    color: #976db0;
-    background-color: transparent;
-    position:sticky;
+
+.status:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu:hover {
+    display: block;
+}
+
+.status .profile-container {
+    display: flex;
+    gap: 1rem;
+    padding-right: 5%;
+}
+
+.side {
+    stroke: #525252;
+}
+
+.dropdown-menu {
+    display: none;
+    width: 12rem;
+    background-color: #240e2f;
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    z-index: 3;
+    border-radius: 0.5rem;
+    border: 1px solid #eaeaea;
+    transition: all 1s;
+}
+
+.dropdown-menu-option {
+    padding: 1vmin;
+    padding-left: 2vmin;
 }
 
 @media screen and (max-width: 768px) {

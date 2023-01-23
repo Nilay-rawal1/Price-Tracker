@@ -26,7 +26,7 @@ body {
     background-position: top left, 120% 20em, left;
     background-attachment: local;
     overflow-x: hidden;
-    overflow-y:scroll;
+    overflow-y: hidden;
 }
 
 a {

@@ -96,3 +96,9 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('landing')
+
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
+def development(request):
+    return render(request, 'development.html')

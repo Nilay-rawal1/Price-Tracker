@@ -1,0 +1,15 @@
+.message-container {
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.message-box {
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+    border: 7px dashed #ffffff;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-size: 4vmin;
+}

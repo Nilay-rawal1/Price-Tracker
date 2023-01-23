@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel = 'stylesheet' href = "{% static 'css/development.css' %}">
+{% endblock head %}
+
+{% block title %} Dashboard {% endblock title %}
+{% block body %}
+    {% include 'header.html' %}
+    <div class = 'message-container'>
+        <div class = 'message-box'>
+            This page is still under development. Please try again later.
+        </div>
+    </div>
+{% endblock body%}

@@ -10,7 +10,8 @@
 
 {% block title %} Barcost {% endblock title %}
 {% block body %}
-<div class = 'header'>
+{% include 'header.html' %}
+<!-- <div class = 'header'>
     <div class = 'title'>
         <img src = "{% static 'images/logo.png' %}">
         <span>BARCOST</span>
@@ -23,7 +24,7 @@
     <div class = 'status'>
       <a  class="hovers"href="{% url 'signup' %}">LOGIN/SIGNUP </a>  
     </div>
-</div>
+</div> -->
 
 <section class='login-container-wrapper'>
     <div class='login-container'>

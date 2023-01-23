@@ -86,7 +86,7 @@
     width: 50%;
 }
 
-#tip1, #tip2, #frame{
+svg {
     fill: #7b129e;
     stroke: #7b129e;
 }

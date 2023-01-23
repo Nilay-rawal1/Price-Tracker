@@ -1,0 +1,19 @@
+.dashboard-container {
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.empty-dashborad {
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+    border: 7px dashed #ffffff;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-size: 4vmin;
+}
+
+.empty-dashborad img {
+    width: 7vmin;
+}

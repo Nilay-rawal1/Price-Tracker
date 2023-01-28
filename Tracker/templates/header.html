@@ -23,7 +23,7 @@
     <div class = 'status'>
         {% if user.is_authenticated %}
 
-            <div class = 'profile-container'>
+            <div class = 'profile-container' onclick="toggle_dropdown()">
                 <div class = 'username'>
                     {{ user.first_name }}
                 </div>
@@ -59,4 +59,9 @@
         {% endif %}
     </div>
 </div>
+<script>
+    function toggle_dropdown() {
+        document.getElementById("dropdown-menu").classList.toggle("dropdown-menu-show");
+    }
+</script>
 {% endblock body %}

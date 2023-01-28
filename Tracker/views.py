@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db import IntegrityError
+from .models import *
 
 # Create your views here.
 def landing(request):
@@ -97,8 +99,34 @@ def logout_user(request):
     logout(request)
     return redirect('landing')
 
+
+@login_required
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    if request.method == "POST":
+        if 'search' in request.POST:
+            product_url = request.POST['product_url']
+
+            try:
+                URLS.objects.get(url = product_url)
+                return render(request, 'dashboard.html', {'message': 'This product is already added'})
+
+            except URLS.DoesNotExist:
+                new_url = URLS(url = product_url)
+                new_url.save()
+                return render(request, 'dashboard.html', {'message': 'URL added successfully.'})
+
+        if 'add2watchlist' in request.POST:
+            pass
+        
+    user = request.user
+    Wishlist = wishlist.objects.filter(user = user)
+
+    if Wishlist:
+        return render(request, 'dashboard.html', {'Wishlist': Wishlist})
+    
+    else:
+        return render(request, 'dashboard.html', {'message': 'empty'})
+
 
 def development(request):
     return render(request, 'development.html')

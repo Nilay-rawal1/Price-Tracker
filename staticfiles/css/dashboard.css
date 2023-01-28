@@ -8,12 +8,23 @@
     display: grid;
     place-items: center;
     padding: 2rem 1rem;
-    border: 7px dashed #ffffff;
     color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
     font-family: 'Poppins';
     font-size: 4vmin;
 }
 
 .empty-dashborad img {
     width: 7vmin;
+}
+
+.heading-1 {
+    font-size: 3.5vmin;
+    color: #ffffff;
+}
+
+.heading-2 {
+    font-size: 3vmin;
+    color: #b7b7b7;
 }

@@ -9,12 +9,24 @@
 {% block body %}
     {% include 'header.html' %}
     <div class = 'dashboard-container'>
+        {% if message %}
+                {% include 'alert.html' %}
+                <form method="post">
+                    {% csrf_token %}
+                    <button type = "submit" name = 'add2watchlist'>Add</button>
+                </form>
+        {% endif %}
         <div class = 'empty-dashborad'>
-            There is nothing to track...
-            Add product link to start tracking 
+            <span class = 'heading-1'>You have nothing bookmarked yet.</span>
+            <span class = 'heading-2'>Add a product URL to get started</span>
             <br/>
             <br/>
             <img src = "{% static 'images/add_icon.png' %}">
+            <form method = 'POST' action ="">
+                {% csrf_token %}
+                <input type = 'url' name = 'product_url' placeholder="URL">
+                <button type = 'submit' name = 'search'>Submit</button>
+            </form>
         </div>
     </div>
 {% endblock body%}

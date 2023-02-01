@@ -3,11 +3,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+
 from django.db import IntegrityError
 from .models import *
 
+from .tasks import GetProdcutData
+
 # Create your views here.
 def landing(request):
+    GetProdcutData.delay()
     return render(request, 'landing.html')
 
 def signup(request):

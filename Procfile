@@ -1,1 +1,1 @@
-web: python manage.py migrate && celery -A Price_Tracker worker -l info && gunicorn PriceTracker.wsgi
+web: python manage.py migrate && celery -A Price_Tracker worker --loglevel=INFO & gunicorn PriceTracker.wsgi

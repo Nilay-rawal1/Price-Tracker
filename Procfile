@@ -1,2 +1,1 @@
-web: python manage.py makemigrations && python manage.py migrate && gunicorn PriceTracker.wsgi
-celery: celery -A Price_Tracker.celery worker -l info
+web: python manage.py migrate && celery -A Price_Tracker worker -l info && gunicorn PriceTracker.wsgi

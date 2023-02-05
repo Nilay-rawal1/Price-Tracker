@@ -25,7 +25,7 @@ load_dotenv(find_dotenv())
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE' : 'djongo',
         'NAME': 'Price_Tracker',
         'CLIENT' : {
-            'host' : os.environ['HOST']
+            'host' : os.environ.get('HOST')
         }
     }
 }

@@ -4,4 +4,4 @@ from celery import shared_task
 def GetProdcutData(self):
     for i in range(100):
         print(i)
-    return "Done"
+    return 'Done'

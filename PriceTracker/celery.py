@@ -8,7 +8,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PriceTracker.settings')
 
 app = Celery('PriceTracker')
 app.conf.enable_utc = False
-app.conf.update(timezome = 'Asia/Kolkata')
+app.conf.update(timezone = 'Asia/Kolkata')
 app.config_from_object(settings, namespace = 'CELERY')
 
 #Celery Beat Settings

@@ -11,10 +11,10 @@ from .tasks import GetProdcutData
 
 # Create your views here.
 def landing(request):
-    GetProdcutData.delay()
     return render(request, 'landing.html')
 
 def signup(request):
+    result = GetProdcutData.delay()
     if request.method == "POST":
         username = request.POST["username"]
         name = request.POST["name"]
@@ -71,17 +71,8 @@ def signup(request):
                     login(request, user)
                     return redirect('landing')
 
-        #trying to save data
-        # try:
-        #     user = User.objects.create_user(username = username, email = email, password = password)
-        #     user.save()
-        #     login(request, user)
-        #     return redirect('landing')
-        # except IntegrityError:
-        #     return render(request, 'signup.html', {'message' : 'Username is already taken.'})
-
     else:
-        return render(request, 'signup.html', {'message': ''})
+        return render(request, 'signup.html', {'message': result})
 
 def login_user(request):
     print('This is a test to check if the function is being called or not.')

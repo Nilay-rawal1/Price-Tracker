@@ -11,10 +11,10 @@ from .tasks import GetProdcutData
 
 # Create your views here.
 def landing(request):
-    return render(request, 'landing.html')
+    result = GetProdcutData.delay('https://www.amazon.in/dp/B0B12FXQ4S')
+    return render(request, 'landing.html', {'message': result})
 
 def signup(request):
-    result = GetProdcutData.delay()
     if request.method == "POST":
         username = request.POST["username"]
         name = request.POST["name"]
@@ -72,7 +72,7 @@ def signup(request):
                     return redirect('landing')
 
     else:
-        return render(request, 'signup.html', {'message': result})
+        return render(request, 'signup.html')
 
 def login_user(request):
     print('This is a test to check if the function is being called or not.')
@@ -108,6 +108,7 @@ def dashboard(request):
             except URLS.DoesNotExist:
                 new_url = URLS(url = product_url)
                 new_url.save()
+
                 return render(request, 'dashboard.html', {'message': 'URL added successfully.'})
 
         if 'add2watchlist' in request.POST:

@@ -1,7 +1,7 @@
 from celery import shared_task
+from Scraper import scrape
 
 @shared_task(bind = True)
-def GetProdcutData(self):
-    for i in range(100):
-        print(i)
+def GetProdcutData(self, product_url):
+    scrape.get(product_url)
     return 'Done'

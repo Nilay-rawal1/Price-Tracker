@@ -1,5 +1,4 @@
 import requests
-import scrapy
 import random
 
 from scrapy import Selector
@@ -39,7 +38,7 @@ def parse(url):
         name = selector.css('span.a-size-large.product-title-word-break::text').get().strip()
         price = selector.css('span.a-price-whole::text').get()
         rating = selector.css('span.a-icon-alt::text').get().replace(' out of 5 stars', '')
-        image_url = selector.css('img.a-dynamic-image.a-stretch-vertical').get()
+        image_url = selector.css('img.a-dynamic-image.a-stretch-vertical').attrib['src']
 
         item = {
             'url': url,

@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Tracker',
-
+    
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -80,12 +82,13 @@ WSGI_APPLICATION = 'PriceTracker.wsgi.application'
 
 DATABASES = {
     'default' : {
-        'ENGINE' : 'djongo',
-        'NAME': 'Price_Tracker',
-        'CLIENT' : {
-            'host' : os.environ.get('HOST')
-        }
-    }
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME': os.environ.get('PGNAME'),                      
+        'USER': os.environ.get('PGUSER'),
+        'PASSWORD': os.environ.get('PGPASSWORD'),
+        'HOST': os.environ.get('PGHOST'),
+        'PORT': os.environ.get('PGPORT'),
+    },
 }
 
 
@@ -159,12 +162,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Celery Settings
-CELERY_BROKER_URL = os.environ['REDIS_URL']
-# CELERY_BROKER_URL ='redis://127.0.0.1:6379'
+# CELERY_BROKER_URL = os.environ['REDIS_URL']
+CELERY_BROKER_URL ='redis://127.0.0.1:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Kolkata'
-CELERY_RESULT_BACKEND = None
+CELERY_RESULT_BACKEND = 'django-db'
 
-
+#CELERY BEAT SETTINGS
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'

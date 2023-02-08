@@ -8,11 +8,11 @@ from django.db import IntegrityError
 from .models import *
 
 from .tasks import GetProdcutData
+from Scraper import check_link
 
 # Create your views here.
 def landing(request):
-    result = GetProdcutData.delay('https://www.amazon.in/dp/B0B12FXQ4S')
-    return render(request, 'landing.html', {'message': result})
+    return render(request, 'landing.html')
 
 def signup(request):
     if request.method == "POST":
@@ -98,30 +98,74 @@ def logout_user(request):
 @login_required
 def dashboard(request):
     if request.method == "POST":
-        if 'search' in request.POST:
-            product_url = request.POST['product_url']
+        product_url = request.POST['product_url']
+        if check_link.url_valid(product_url):
+            cleaned_url = check_link.clean_url(product_url)
+            if check_link.url_valid(cleaned_url):
+                try:
+                    URLS.objects.get(url = cleaned_url)
+                    return render(request, 'dashboard.html', {'message': 'This product is already added. It is added to your Dashboard too'})
 
-            try:
-                URLS.objects.get(url = product_url)
-                return render(request, 'dashboard.html', {'message': 'This product is already added'})
+                except URLS.DoesNotExist:
+                    new_url = URLS(url = cleaned_url)
+                    new_url.save()
+                    GetProdcutData.delay(cleaned_url)
+                    return render(request, 'dashboard.html', {'message': 'URL added successfully and will be added to your Dashboard shortly.'})
+            else:
+                return render(request, 'dashboard.html', {'message': "There is some error at our side, we can't process your request."})
+        else:
+            return render(request, 'dashboard.html', {'message': "Please enter a valid URL."})
+    return render(request, 'dashboard.html')
+                
+        # check if url is valid
+        # if the url is valid, clean the url and check it again
+        # if the checked url valid then save it to db
+        # scrape the url and save product info to Product model
+        # add the product to the user's wishlist
 
-            except URLS.DoesNotExist:
-                new_url = URLS(url = product_url)
-                new_url.save()
+        # https://www.amazon.in/Zebronics-Zeb-Thunder-Bluetooth-Headphone-Input/dp/B07L8KNP5F?ref_=Oct_DLandingS_D_d93d4ae5_81&th=1
 
-                return render(request, 'dashboard.html', {'message': 'URL added successfully.'})
 
-        if 'add2watchlist' in request.POST:
-            pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #         product_url = Scraper.check_link(request.post['product_url'])
+    #         # GetProdcutData(product_url)
+
+    #         product_url = request.POST['product_url']
+
+    #         try:
+    #             URLS.objects.get(url = product_url)
+    #             return render(request, 'dashboard.html', {'message': 'This product is already added'})
+
+    #         except URLS.DoesNotExist:
+    #             new_url = URLS(url = product_url)
+    #             new_url.save()
+
+    #             return render(request, 'dashboard.html', {'message': 'URL added successfully.'})
+
         
-    user = request.user
-    Wishlist = wishlist.objects.filter(user = user)
+    # user = request.user
+    # Wishlist = wishlist.objects.filter(user = user)
 
-    if Wishlist:
-        return render(request, 'dashboard.html', {'Wishlist': Wishlist})
+    # if Wishlist:
+    #     return render(request, 'dashboard.html', {'Wishlist': Wishlist})
     
-    else:
-        return render(request, 'dashboard.html', {'message': 'empty'})
+    # else:
+    #     return render(request, 'dashboard.html', {'message': 'empty'})
 
 
 def development(request):

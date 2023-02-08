@@ -162,8 +162,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Celery Settings
-# CELERY_BROKER_URL = os.environ['REDIS_URL']
-CELERY_BROKER_URL ='redis://127.0.0.1:6379'
+CELERY_BROKER_URL = os.environ['REDIS_URL']
+# CELERY_BROKER_URL ='redis://127.0.0.1:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'

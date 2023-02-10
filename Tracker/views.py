@@ -101,7 +101,10 @@ def dashboard(request):
     bookmarks = wishlist.objects.filter(user = user.id)
     cart_items = []
     for bookmark in bookmarks:
-        cart_items.append(Product.objects.get(id = bookmark.product_id))
+        # cart_items.append(Product.objects.get(id = bookmark.product_id))
+        product = Product.objects.get(id=bookmark.product_id)
+        latest_price_history = PriceHistory.objects.filter(product=product).latest('date')
+        cart_items.append({'product': product, 'price': latest_price_history.price})
     if request.method == "POST":
         product_url = request.POST['product_url']
         if check_link.url_valid(product_url):

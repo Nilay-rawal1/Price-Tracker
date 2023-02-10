@@ -1,5 +1,4 @@
 .dashboard-container {
-    min-height: 90vh;
     display: grid;
     place-items: center;
 }
@@ -17,6 +16,74 @@
 
 .empty-dashborad img {
     width: 7vmin;
+}
+
+.product-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 15rem));
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 2rem;
+}
+
+.product-card {
+    border-radius: 1rem;
+    padding: 1rem;
+
+    background: #fff;
+    box-shadow: 0px 0px 5px 5px #eaeaea;
+
+    display: grid;
+    align-content: space-between;
+    gap: 2rem;
+
+    font-family: sans-serif;
+    font-size: 2vmin;
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+}
+
+.product-details-container {
+    display: grid;
+    gap: 0.5rem;
+    font-family: inherit;
+}
+
+.product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-rating-price-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-around;
+}
+
+.button-container .btn {
+    padding: 0.5rem;
+    flex: auto;
+    font-family: 'sans-serif';
+    font-size: 2vmin;
 }
 
 .heading-1 {

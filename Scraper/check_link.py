@@ -1,5 +1,5 @@
 import requests
-from Scraper.Spiders import ProductDetailsSpider 
+from Scraper.Spiders import AmazonSpider 
 
 def FindDomain(url):
     domain = url.replace("http://", "").replace("https://", "").replace("www.", "").replace(".com", "").replace(".in", "").split("/")[0]
@@ -29,7 +29,7 @@ domain_function_mapping = {
 
 def url_valid(url):
     try:
-        response = ProductDetailsSpider.fetch_data(url)
+        response = AmazonSpider.fetch_data(url)
         if response.status_code == 200:
             return True
         else:

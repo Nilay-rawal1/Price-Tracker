@@ -1,4 +1,7 @@
-from Scraper.Spiders.ProductDetailsSpider import *
+from Scraper.Spiders.AmazonSpider import *
 
-def get(url):
-    parse(url)
+def getProduct(url):
+    return parseProduct(url)
+
+def getPrice(url):
+    return parsePrice(url)

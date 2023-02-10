@@ -3,21 +3,20 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class URLS(models.Model):
-    url = models.URLField(null = False)
-
 class Product(models.Model):
     name = models.CharField(max_length=500)
-    url = models.OneToOneField(URLS, on_delete=models.CASCADE)
-    price_history = models.TextField()
+    url = models.URLField(unique=True)
+    image_url = models.URLField(default='https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png')
+    rating = models.FloatField(default=0)
+    price_history = models.ManyToManyField("PriceHistory", related_name='PriceHistoryProduct')
 
-class Price_History(models.Model):
-    date = models.DateTimeField(auto_now_add=True)
+class PriceHistory(models.Model):
+    product = models.ForeignKey(Product, null=True, related_name='PriceHistoryProduct', on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now=True)
     price = models.FloatField()
-
-# class UserCart(models.Model):
-#     name = models.CharField(max_length=100)
-#     url = models.URLField() 
+    
+    class Meta:
+        get_latest_by = 'date'
 
 class wishlist(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)

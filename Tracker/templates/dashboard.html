@@ -16,6 +16,9 @@
                     <button type = "submit" name = 'add2watchlist'>Add</button>
                 </form>
         {% endif %}
+        {% for item in cart_items %}
+            {{ item.name }}
+        {% endfor %}
         <div class = 'empty-dashborad'>
             <span class = 'heading-1'>You have nothing bookmarked yet.</span>
             <span class = 'heading-2'>Add a product URL to get started</span>

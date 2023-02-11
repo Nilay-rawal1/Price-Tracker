@@ -114,16 +114,16 @@ def dashboard(request):
                 try:
                     Product.objects.get(url = cleaned_url)
                     AddtoWishlist.delay(cleaned_url, user.id)
-                    return render(request, 'dashboard.html', {'message': 'This product is already added. It is added to your Dashboard too'})
+                    return render(request, 'dashboard.html', {'message': 'This product is already added. It is added to your Dashboard too', 'cart_items': cart_items})
 
                 except Product.DoesNotExist:
                     GetProductData.delay(cleaned_url, user.id)
 
-                    return render(request, 'dashboard.html', {'message': 'URL added successfully and will be added to your Dashboard shortly.'})
+                    return render(request, 'dashboard.html', {'message': 'URL added successfully and will be added to your Dashboard shortly.', 'cart_items': cart_items})
             else:
-                return render(request, 'dashboard.html', {'message': "There is some error at our side, we can't process your request."})
+                return render(request, 'dashboard.html', {'message': "There is some error at our side, we can't process your request.", 'cart_items': cart_items})
         else:
-            return render(request, 'dashboard.html', {'message': "Please enter a valid URL."})
+            return render(request, 'dashboard.html', {'message': "Please enter a valid URL.", 'cart_items': cart_items})
     return render(request, 'dashboard.html', {'cart_items': cart_items})
                 
 def development(request):

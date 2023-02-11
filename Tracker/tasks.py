@@ -51,7 +51,7 @@ def FetchPrice(bind=True):
     count = 0
     for product in product_list:
         data = scrape.parsePrice(product.url)
-        data_price = data.get('price')
+        data_price = int(data.get('price').replace(',', ''))
         if product.price_history.latest().price != data_price:
             new_price_history = PriceHistory(product=product, price=data_price)
             new_price_history.save()

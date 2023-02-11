@@ -13,7 +13,7 @@
         {% if message %}
                 {% include 'alert.html' %}
         {% endif %}
-        {% if cart_items is None %}
+        {% if not cart_items %}
             <div class = 'empty-dashborad'>
                 <span class = 'heading-1'>You have nothing bookmarked yet.</span>
                 <span class = 'heading-2'>Add a product URL to get started</span>
@@ -27,9 +27,15 @@
                 </form>
             </div>
         {% else %}
+            <div class = 'add-product-link'>
+                <form method = 'POST' action ="" class = 'product-form'>
+                    {% csrf_token %}
+                    <input type = 'url' name = 'product_url' placeholder="URL">
+                    <button type = 'submit' name = 'search' class = 'add-product'>Submit</button>
+                </form>
+            </div>
             <div class = 'product-card-container'>
                 {% for item in cart_items %}
-                <!-- <a href = "{{ item.product.product_url }}"> -->
                     <div class = 'product-card'>
                         <div class = 'product-image'>
                             <img src = "{{ item.product.image_url }}">
@@ -48,15 +54,17 @@
                             </div>
                             <div class = 'button-container'>
                                 <button class = 'btn' onclick= "location.href='{{ item.product.url }}';">
-                                    View on Amazon
+                                    Track Price
                                 </button>
                                 <button class = 'btn' onclick= "location.href='{{ item.product.url }}';">
-                                    View on Amazon
+                                    View on 
+                                    {% if item.product.domain == 'Amazon' %}
+                                        <img src = "{% static 'images/amazon.png' %}" width="50%">
+                                    {% endif %}
                                 </button>
                             </div>
                         </div>
                     </div>
-                <!-- </a> -->
                 {% endfor %}
             </div>
         {% endif %}

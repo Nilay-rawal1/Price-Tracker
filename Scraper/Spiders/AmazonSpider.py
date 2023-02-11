@@ -33,11 +33,12 @@ def parseProduct(url):
             image_url = selector.css('img.a-dynamic-image.a-stretch-horizontal').attrib['src']
         
         try:
-            price = int(selector.css('span.a-price-whole::text').get().replace(',', ''))
+            price = selector.css('span.a-price-whole::text').get().replace(',', '')
         except:
             price = None
         
         item = {
+            'domain': 'Amazon',
             'url': url,
             'name': name,
             'price': price,

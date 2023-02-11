@@ -105,6 +105,7 @@ def dashboard(request):
         product = Product.objects.get(id=bookmark.product_id)
         latest_price_history = PriceHistory.objects.filter(product=product).latest('date')
         cart_items.append({'product': product, 'price': latest_price_history.price})
+    print(cart_items)
     if request.method == "POST":
         product_url = request.POST['product_url']
         if check_link.url_valid(product_url):
@@ -112,11 +113,11 @@ def dashboard(request):
             if check_link.url_valid(cleaned_url):
                 try:
                     Product.objects.get(url = cleaned_url)
+                    AddtoWishlist.delay(cleaned_url, user.id)
                     return render(request, 'dashboard.html', {'message': 'This product is already added. It is added to your Dashboard too'})
 
                 except Product.DoesNotExist:
-                    GetProductData.delay(cleaned_url)
-                    AddtoWishlist.delay(cleaned_url, user.id)
+                    GetProductData.delay(cleaned_url, user.id)
 
                     return render(request, 'dashboard.html', {'message': 'URL added successfully and will be added to your Dashboard shortly.'})
             else:

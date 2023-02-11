@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Product(models.Model):
+    domain = models.CharField(max_length=50, default='')
     name = models.CharField(max_length=500)
     url = models.URLField(unique=True)
     image_url = models.URLField(default='https://bitsofco.de/content/images/2018/12/Screenshot-2018-12-16-at-21.06.29.png')

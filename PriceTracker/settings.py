@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'PriceTracker.wsgi.application'
 DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.postgresql',
-        'NAME': os.environ.get('PGNAME'),                      
-        'USER': os.environ.get('PGUSER'),
-        'PASSWORD': os.environ.get('PGPASSWORD'),
-        'HOST': os.environ.get('PGHOST'),
-        'PORT': os.environ.get('PGPORT'),
+        'NAME': os.environ['PGDATABASE'],                      
+        'USER': os.environ['PGUSER'],
+        'PASSWORD': os.environ['PGPASSWORD'],
+        'HOST': os.environ['PGHOST'],
+        'PORT': os.environ['PGPORT'],
     },
 }
 

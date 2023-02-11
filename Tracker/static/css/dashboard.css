@@ -12,10 +12,43 @@
     border-radius: 1rem;
     font-family: 'Poppins';
     font-size: 4vmin;
+    margin-top: 25vmin;
 }
 
 .empty-dashborad img {
     width: 7vmin;
+}
+
+.add-product-link {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.product-form {
+    display: flex;
+    flex: 4;
+    justify-content: flex-end;
+    transition: all 2s;
+    position: absolute;
+}
+
+.product-form input {
+    padding: 0.5rem 1rem;
+    font-size: 3vmin;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.add-product {
+    font-size: 3vmin;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    z-index: 3;
+    overflow: hidden;
 }
 
 .product-card-container {
@@ -32,7 +65,7 @@
     padding: 1rem;
 
     background: #fff;
-    box-shadow: 0px 0px 5px 5px #eaeaea;
+    box-shadow: 5px 5px 20px 10px #161616;
 
     display: grid;
     align-content: space-between;
@@ -56,6 +89,7 @@
     display: grid;
     gap: 0.5rem;
     font-family: inherit;
+    font-size: 2.6vmin;
 }
 
 .product-name {
@@ -82,8 +116,15 @@
 .button-container .btn {
     padding: 0.5rem;
     flex: auto;
-    font-family: 'sans-serif';
-    font-size: 2vmin;
+    font-family: 'Clash Display';
+    font-size: 2.5vmin;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background: transparent;
 }
 
 .heading-1 {

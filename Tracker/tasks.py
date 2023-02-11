@@ -4,12 +4,13 @@ from .models import *
 from Scraper import scrape
 
 @shared_task(bind=True)
-def GetProductData(self, product_url):
+def GetProductData(self, product_url, user_id):
     try:
         data = scrape.getProduct(product_url)
         data_price = int(data.get('price').replace(',', ''))
 
         product, created = Product.objects.get_or_create(
+            domain = data.get('domain'),
             name=data.get('name'),
             url=data.get('url'),
             rating = data.get('rating'),
@@ -24,6 +25,12 @@ def GetProductData(self, product_url):
         if created:
             product.price_history.add(price_history)
             product.save()
+
+        user = User.objects.get(id = user_id)
+        product_id = Product.objects.get(url = product_url)
+
+        wishlist.objects.create(user = user, product = product_id)
+        print(user, product_id)
         return 'Done'
 
     except Exception as e:

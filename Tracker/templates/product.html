@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <!-- <meta http-equiv="refresh" content="10" /> -->
+    <link rel = 'stylesheet' href = "{% static 'css/product.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock head %}
+
+{% block title %} {{ product.name }} {% endblock title %}
+{% block body %}
+    {% include 'header.html' %}
+    <div class="product-container-wrapper">
+        <div class="product-details-container">
+            <div class = 'product-card'>
+                <div class = 'product-image'>
+                    <img src = "{{ product.image_url }}">
+                </div>
+                <div class = 'product-details'>
+                    <div class = 'product-name'>
+                        {{ product.name }}
+                    </div>
+                    <div class = 'product-rating-price-flex'>
+                        <div class = 'product-rating'>
+                            {{ product.rating }}
+                        </div>
+                        <div class = 'product-price'>
+                            {{ product_price }}
+                        </div>
+                    </div>
+                    <div class = 'button-container'>
+                        <a href="{{ product.url }}">
+                            <button class = 'btn'>
+                                View on 
+                                {% if product.domain == 'Amazon' %}
+                                    <img src = "{% static 'images/amazon.png' %}" width="50%">
+                                {% endif %}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-chart-container">
+            <canvas id="product-chart">
+
+            </canvas>
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('product-chart');
+        Chart.defaults.font.size = 22;
+        Chart.defaults.color = '#eaeaea';
+        Chart.defaults.borderColor = '#717171';
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [{% for date in price_data %} "{{ date.date }}", {% endfor %}],
+                datasets: [{
+                    label: 'Price: ',
+                    data: [{% for price in price_data %} {{ price.price }}, {% endfor %}],
+                    borderWidth: 2,
+                    tension: 0.2
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+            }
+        });
+    </script>
+      
+{% endblock body%}

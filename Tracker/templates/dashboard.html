@@ -53,15 +53,19 @@
                                 </div>
                             </div>
                             <div class = 'button-container'>
-                                <button class = 'btn' onclick= "location.href='{{ item.product.url }}';">
-                                    Track Price
-                                </button>
-                                <button class = 'btn' onclick= "location.href='{{ item.product.url }}';">
-                                    View on 
-                                    {% if item.product.domain == 'Amazon' %}
-                                        <img src = "{% static 'images/amazon.png' %}" width="50%">
-                                    {% endif %}
-                                </button>
+                                <a href="{% url 'product' item.product.id %}">
+                                    <button class = 'btn'>
+                                        Track Price
+                                    </button>
+                                </a>
+                                <a href="{{ item.product.url }}">
+                                    <button class = 'btn'>
+                                        View on 
+                                        {% if item.product.domain == 'Amazon' %}
+                                            <img src = "{% static 'images/amazon.png' %}" width="50%">
+                                        {% endif %}
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>

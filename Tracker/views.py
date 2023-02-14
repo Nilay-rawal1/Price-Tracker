@@ -126,5 +126,11 @@ def dashboard(request):
             return render(request, 'dashboard.html', {'message': "Please enter a valid URL.", 'cart_items': cart_items})
     return render(request, 'dashboard.html', {'cart_items': cart_items})
                 
+def product(request, product_id):
+    product = Product.objects.get(id = product_id)
+    price_data = PriceHistory.objects.filter(product_id=product_id)
+    latest_price_history = price_data.latest('date')
+    return render (request, 'product.html', {'product': product, 'product_price': latest_price_history.price, 'price_data': price_data})
+
 def development(request):
     return render(request, 'development.html')

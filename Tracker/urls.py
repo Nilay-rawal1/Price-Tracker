@@ -7,8 +7,12 @@ urlpatterns = [
     path('dashboard', views.dashboard, name = 'dashboard'),
     path('development', views.development, name = 'development'),
 
-    #User Authentication
+    # User Authentication
     path('login/', views.login_user, name = 'login'),
     path('signup/', views.signup, name = 'signup'),
-    path('logout/', views.logout_user, name='logout')
+    path('logout/', views.logout_user, name='logout'),
+
+    # Page for showing product price graphs
+    path('product/<str:product_id>/', views.product, name = 'product'),
+
 ]

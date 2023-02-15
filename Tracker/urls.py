@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.landing , name='landing'),
     path('dashboard', views.dashboard, name = 'dashboard'),
     path('development', views.development, name = 'development'),
+    path('about', views.about, name = 'about'),
 
     # User Authentication
     path('login/', views.login_user, name = 'login'),

@@ -75,12 +75,10 @@ def signup(request):
         return render(request, 'signup.html')
 
 def login_user(request):
-    print('This is a test to check if the function is being called or not.')
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
 
-        print('bhai data aa gya')
         user = authenticate(request, username = username, password = password)
         if user is not None:
             login(request, user)
@@ -105,7 +103,6 @@ def dashboard(request):
         product = Product.objects.get(id=bookmark.product_id)
         latest_price_history = PriceHistory.objects.filter(product=product).latest('date')
         cart_items.append({'product': product, 'price': latest_price_history.price})
-    print(cart_items)
     if request.method == "POST":
         product_url = request.POST['product_url']
         if check_link.url_valid(product_url):

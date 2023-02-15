@@ -131,3 +131,6 @@ def product(request, product_id):
 
 def development(request):
     return render(request, 'development.html')
+    
+def about(request):
+    return render(request, 'about.html')

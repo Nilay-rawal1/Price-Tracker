@@ -58,7 +58,7 @@
             data: {
                 labels: [{% for date in price_data %} "{{ date.date }}", {% endfor %}],
                 datasets: [{
-                    label: 'Price: ',
+                    label: 'Price ',
                     data: [{% for price in price_data %} {{ price.price }}, {% endfor %}],
                     borderWidth: 2,
                     tension: 0.2

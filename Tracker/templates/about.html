@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <!-- <meta http-equiv="refresh" content="10" /> -->
+    <link rel = 'stylesheet' href = "{% static 'css/about.css' %}">
+{% endblock head %}
+
+{% block title %} About Us {% endblock title %}
+{% block body %}
+    {% include 'header.html' %}
+    <div class="about-container-grid">
+        <div class="person-card">
+            <div class="person-image-container">
+                <img src="{% static 'images/Ashutosh.png' %}">
+            </div>
+            <div class="person-details">
+                <div class="name">
+                    Ashutosh
+                </div>
+                <div class="reg-no">
+                    21BCE10313
+                </div>
+                <div class="role">
+                    Backend Developer
+                </div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-image-container">
+                <img src="{% static 'images/Dev.jpg' %}">
+            </div>
+            <div class="person-details">
+                <div class="name">
+                    Dev
+                </div>
+                <div class="reg-no">
+                    21BCE11063
+                </div>
+                <div class="role">
+                    UI/UX Designer
+                </div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-image-container">
+                <img src="{% static 'images/Nilay.jpg' %}">
+            </div>
+            <div class="person-details">
+                <div class="name">
+                    Nilay
+                </div>
+                <div class="reg-no">
+                    21BCE11143
+                </div>
+                <div class="role">
+                    Frontend Developer
+                </div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-image-container">
+                <img src="{% static 'images/Adarsh.jpg' %}">
+            </div>
+            <div class="person-details">
+                <div class="name">
+                    Adarsh
+                </div>
+                <div class="reg-no">
+                    21BCE11188
+                </div>
+                <div class="role">
+                    Content Writer
+                </div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-image-container">
+                <img src="{% static 'images/Rishabh.jpg' %}">
+            </div>
+            <div class="person-details">
+                <div class="name">
+                    Rishabh
+                </div>
+                <div class="reg-no">
+                    21BCE11196
+                </div>
+                <div class="role">
+                    Content Writer
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body%}

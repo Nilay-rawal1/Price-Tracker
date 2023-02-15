@@ -30,10 +30,10 @@
 
 .product-form {
     display: flex;
-    flex: 4;
     justify-content: flex-end;
     transition: all 2s;
     position: absolute;
+    width: 95%;
 }
 
 .product-form input {
@@ -45,7 +45,7 @@
 
 .add-product {
     font-size: 3vmin;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     z-index: 3;
     overflow: hidden;
